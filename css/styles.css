@@ -1,0 +1,286 @@
+:root {
+  --color-fondo: #f5f5f5;
+  --color-texto: #333;
+  --color-secundario: #555;
+  --color-principal-oscuro: #0a2a00;
+  --color-principal-claro: #fff;
+  --color-acento: #0b5d00;
+  --color-acento-hover: #123a00;
+  --color-borde: #ccc;
+  --color-linea: #ddd;
+  --color-footer-texto: #bbb;
+}
+
+
+/*///////////////// AJUSTES GENERALES //////////////////*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+h1, h2, h3, .btn {
+  font-family: 'Oswald', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+
+/*///////////////// NAV //////////////////*/
+.main-header {
+  background-color: var(--color-principal-oscuro);
+  color: var(--color-principal-claro);
+  padding: 15px 0; 
+  display: flex;
+  justify-content: center;
+}
+
+.main-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%; 
+  max-width: 1200px;
+}
+
+.logo {
+  font-size: 1.5em; 
+  font-weight: 600;
+  color: var(--color-principal-claro);
+}
+
+.main-nav ul {
+  display: flex;
+  gap: 30px;
+}
+
+.main-nav a.activo {
+  border-bottom: 2px solid var(--color-acento-hover);
+}
+
+
+/*///////////////// FOOTER //////////////////*/
+
+footer {
+  background-color: var(--color-principal-oscuro); 
+  color: var(--color-principal-claro);
+  padding: 40px 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+  margin-bottom: 20px;
+}
+
+.footer-section h3 {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+  color: var(--color-principal-claro);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-texto); 
+  font-size: 0.85em;
+  color: var(--color-footer-texto);
+}
+
+.footer-bottom p {
+  margin-bottom: 10px;
+}
+
+
+/*///////////////// INDEX //////////////////*/
+
+
+/*///////////////// CONTACTO //////////////////*/
+
+.contacto-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 60px 5%;
+  background-color: var(--color-principal-claro);
+  border-top: 1px solid var(--color-linea);
+  border-bottom: 1px solid var(--color-linea);
+}
+
+.formulario-contacto {
+  flex: 1 1 400px;
+  border-right: 1px solid var(--color-borde);
+  padding-right: 40px;
+}
+
+.formulario-contacto h2 {
+  font-size: 1.5em;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: var(--color-principal-oscuro);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  white-space: nowrap;
+}
+
+.formulario-contacto h2::after {
+  content: '';
+  flex-grow: 1; 
+  height: 1px;
+  background-color: var(--color-linea);
+}
+
+.formulario-contacto p {
+  margin-bottom: 30px;
+  font-size: 0.95em;
+  color: var(--color-secundario);
+  line-height: 1.6;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--color-principal-oscuro);
+  font-weight: 600;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid var(--color-borde);
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+form textarea {
+  resize: vertical;
+}
+
+.btn {
+  background-color: var(--color-acento);
+  color: var(--color-principal-claro);
+  border: none;
+  padding: 12px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--color-acento-hover);
+}
+
+.redes-contacto {
+  flex: 1 1 300px;
+}
+
+.redes-contacto h2 {
+  font-size: 1.5em;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: var(--color-principal-oscuro);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  white-space: nowrap;
+}
+
+.redes-contacto h2::after {
+  content: '';
+  flex-grow: 1;
+  height: 1px;
+  background-color: var(--color-linea);
+}
+
+.iconos {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.iconos .fa-facebook-f {
+  color: var(--color-principal-claro);
+  background-color: var(--color-principal-oscuro); 
+  width: 40px; 
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+}
+
+.iconos .fa-instagram {
+  font-size: 2.5em;
+}
+
+
+/*///////////////// FRANQUICIAS //////////////////*/
+
+
+/*///////////////// MENU-TIENDA //////////////////*/
+
+
+/*///////////////// TIENDA //////////////////*/
+
+
+/*///////////////// TRABAJA EN TDC //////////////////*/
+
+
+/*///////////////// TUTORIALES //////////////////*/
+
+
+/*///////////////// RESPONSIVE //////////////////*/
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contacto-container {
+    flex-direction: column;
+  }
+
+  .iconos {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
