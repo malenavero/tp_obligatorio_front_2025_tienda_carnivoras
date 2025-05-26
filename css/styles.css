@@ -1,14 +1,20 @@
 :root {
   --color-fondo: #f5f5f5;
-  --color-texto: #333;
-  --color-secundario: #555;
+  --color-texto-fuerte: #333;
+  --color-texto-medio: #777777;
+  --color-texto-claro: #bbb;
+
+  --color-secundario: #8f8f8f; 
   --color-principal-oscuro: #0a2a00;
   --color-principal-claro: #fff;
-  --color-acento: #0b5d00;
+  --color-acento: #0b5d00; 
   --color-acento-hover: #123a00;
   --color-borde: #ccc;
   --color-linea: #ddd;
-  --color-footer-texto: #bbb;
+  --color-overlay-bg-hover: rgba(0, 0, 0, 0.5);
+  --color-overlay-text: #fff;
+  --font-family: 'Barlow Condensed', sans-serif;
+
 }
 
 
@@ -21,13 +27,13 @@
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: var(--font-family); 
   background-color: var(--color-fondo);
-  color: var(--color-texto);
+  color: var(--color-texto-fuerte);
 }
 
 h1, h2, h3, .btn {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-family); 
 }
 
 a {
@@ -44,7 +50,7 @@ ul {
 .main-header {
   background-color: var(--color-principal-oscuro);
   color: var(--color-principal-claro);
-  padding: 15px 0; 
+  padding: 15px 0;
   display: flex;
   justify-content: center;
 }
@@ -53,12 +59,12 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%; 
+  width: 90%;
   max-width: 1200px;
 }
 
 .logo {
-  font-size: 1.5em; 
+  font-size: 1.5em;
   font-weight: 600;
   color: var(--color-principal-claro);
 }
@@ -76,7 +82,7 @@ ul {
 /*///////////////// FOOTER //////////////////*/
 
 footer {
-  background-color: var(--color-principal-oscuro); 
+  background-color: var(--color-principal-oscuro);
   color: var(--color-principal-claro);
   padding: 40px 0;
   text-align: center;
@@ -109,9 +115,9 @@ footer {
   text-align: center;
   margin-top: 30px;
   padding-top: 20px;
-  border-top: 1px solid var(--color-texto); 
+  border-top: 1px solid var(--color-texto-fuerte);
   font-size: 0.85em;
-  color: var(--color-footer-texto);
+  color: var(--color-texto-claro);
 }
 
 .footer-bottom p {
@@ -124,14 +130,21 @@ footer {
 
 /*///////////////// CONTACTO //////////////////*/
 
+.contacto-main {
+  background-color: var(--color-fondo);
+  padding-top: 60px;
+}
+
 .contacto-container {
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
   padding: 60px 5%;
-  background-color: var(--color-principal-claro);
   border-top: 1px solid var(--color-linea);
   border-bottom: 1px solid var(--color-linea);
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .formulario-contacto {
@@ -156,7 +169,7 @@ footer {
 
 .formulario-contacto h2::after {
   content: '';
-  flex-grow: 1; 
+  flex-grow: 1;
   height: 1px;
   background-color: var(--color-linea);
 }
@@ -171,8 +184,8 @@ footer {
 form label {
   display: block;
   margin-bottom: 5px;
-  color: var(--color-principal-oscuro);
-  font-weight: 600;
+  color: var(--color-texto-fuerte);
+  font-weight: 300;
 }
 
 form input,
@@ -237,18 +250,29 @@ form textarea {
 
 .iconos .fa-facebook-f {
   color: var(--color-principal-claro);
-  background-color: var(--color-principal-oscuro); 
-  width: 40px; 
+  background-color: var(--color-principal-oscuro);
+  width: 40px;
   height: 40px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.5em;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.iconos .fa-facebook-f:hover {
+  background-color: var(--color-acento-hover);
 }
 
 .iconos .fa-instagram {
   font-size: 2.5em;
+  color: var(--color-principal-oscuro);
+  transition: color 0.2s;
+}
+
+.iconos .fa-instagram:hover {
+  color: var(--color-acento-hover);
 }
 
 
@@ -266,6 +290,135 @@ form textarea {
 
 /*///////////////// TUTORIALES //////////////////*/
 
+/* Contenedor principal de la sección tutoriales */
+.tutoriales-container {
+  padding: 60px 5%;
+  text-align: center;
+  border-top: 1px solid var(--color-linea);
+  border-bottom: 1px solid var(--color-linea);
+}
+
+/* Wrapper para el texto introductorio y la línea */
+.intro-content-wrapper {
+  max-width: 50%;
+  margin: 0 auto 60px auto;
+  text-align: center;
+}
+
+.intro-tutoriales {
+  margin-bottom: 40px;
+}
+
+.intro-tutoriales p {
+  font-family: var(--font-family); 
+  font-weight: 200;
+  font-size: 1.2em;
+  line-height: 1.8;
+  letter-spacing: -0.8px;
+  color: var(--color-texto-medio);
+  margin: 0 0 20px;
+}
+
+
+.intro-tutoriales p:last-child {
+  margin-bottom: 0;
+}
+
+/* Línea de separación */
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--color-linea);
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Contenedor de las tarjetas */
+.cards-tutoriales {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px; 
+  margin: 60px auto 0 auto;
+}
+
+.card-tuto {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.card-tuto img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.card-tuto .overlay-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-overlay-bg-hover);
+  color: var(--color-overlay-text);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.card-tuto .overlay-txt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+  color: var(--color-overlay-text);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Efectos al pasar el ratón */
+.card-tuto:hover img {
+  transform: scale(1.1);
+}
+
+.card-tuto:hover .overlay-bg {
+  opacity: 1;
+}
+
+.card-tuto h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-family: var(--font-family); 
+}
+
+.card-tuto p {
+  font-size: 0.95em;
+  line-height: 1.4;
+  font-family: var(--font-family); 
+}
+
 
 /*///////////////// RESPONSIVE //////////////////*/
 
@@ -279,8 +432,20 @@ form textarea {
     flex-direction: column;
   }
 
+  .formulario-contacto h2::after,
+  .redes-contacto h2::after {
+    display: none;
+  }
+
+  .redes-contacto {
+    padding-left: 0;
+    max-width: 100%;
+    text-align: center;
+  }
+
   .iconos {
     flex-direction: row;
     justify-content: center;
   }
+
 }
