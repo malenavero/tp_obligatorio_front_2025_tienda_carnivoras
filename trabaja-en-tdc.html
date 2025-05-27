@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trabajá en Mandíbulas Verdes | Tienda de Plantas Carnívoras</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <div id="header-placeholder"></div>
+
+  <main class="trabaja-main">
+    <section class="trabaja-container">
+      <div class="formulario-trabaja">
+        <h2>SUMATE A NUESTRO EQUIPO</h2>
+        <h3>TRABAJÁ EN MANDÍBULAS VERDES</h3>
+        <div class="linea-separadora"></div>
+        <p>
+          Si querés formar parte de Mandíbulas Verdes envíanos tu datos y adjunta tu CV
+        </p>
+        <form>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre"/>
+            </div>
+            <div class="form-group">
+              <label for="apellido">Apellido</label>
+              <input type="text" id="apellido" name="apellido"/>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email"/>
+            </div>
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono"/>
+            </div>
+          </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="puesto">¿Cuál es tu puesto de trabajo?</label>
+                <input type="text" id="puesto" name="puesto"/>
+            </div>
+            <div class="form-group">
+                <label for="sucursal">¿Cuál es tu sucursal de preferencia?</label>
+                <select id="sucursal" name="sucursal">
+                <option value="">Selecciona una sucursal</option>
+                <option value="centro">Centro</option>
+                <option value="norte">Zona Norte</option>
+                <option value="sur">Zona Sur</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cv">Adjuntar CV</label>
+            <div class="file-input">
+              <input type="file" id="cv" name="cv"/>
+            </div>
+          </div>
+            <div class="form-group">
+             </div>
+        </div>
+
+          <div class="form-group">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="6"></textarea>
+          </div>
+
+          <button type="submit" class="btn">ENVIAR</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+    <div id="footer-placeholder"></div>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>
