@@ -276,9 +276,6 @@ form textarea {
 }
 
 
-/*///////////////// FRANQUICIAS //////////////////*/
-
-
 /*///////////////// MENU-TIENDA //////////////////*/
 
 
@@ -405,7 +402,7 @@ img {
 
 .trabaja-container .linea-separadora {
   width: 200px;
-  height: 4px;
+  height: 2px;
   background-color: var(--color-acento);
   margin: 0 auto 1.5em auto;
   border-radius: 2px;
