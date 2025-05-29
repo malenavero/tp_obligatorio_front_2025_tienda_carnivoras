@@ -277,6 +277,254 @@ form textarea {
 
 
 /*///////////////// MENU-TIENDA //////////////////*/
+.kits {
+  position: relative;
+  width: 100%;
+  height: 90vh; 
+  overflow: hidden;
+}
+
+.kits > .kits-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6); 
+  z-index: 1;
+}
+
+.kits > .kits-text {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+  padding-left: 5vw; 
+  padding-right: 5vw;
+}
+
+.kits-text > h1 {
+  font-size: 2.5rem;
+  margin: 16px 0;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.kits-text > h2 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.kits-text > p {
+  font-size: 1.2rem;
+  max-width: 600px;
+}
+
+/* Contenedor principal de la galeria */
+.galeria {
+  display: flex;
+  gap: 26px;
+  padding: 64px 64px 1px 64px;
+}
+
+/* Cada columna */
+.galeria > .columna {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 600px;
+}
+
+/* Cada grupo de imágenes (a + b + b) o (b + b + a) */
+.columna > .grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px; 
+  overflow: hidden;
+}
+
+/* Evitar desborde de imagenes en hover */
+.img-wrap {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.img-wrap > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.img-wrap > img:hover {
+  transform: scale(1.1);
+}
+
+/* Estilos para imágenes dentro de columnas */
+.columna img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.columna img:hover {
+  transform: scale(1.1);
+}
+
+/* Altura A (alta) */
+.alto-a {
+  height: 600px;
+}
+
+/* Altura B (baja) */
+.alto-b {
+  height: 300px;
+}
+
+/* Texto sobre imagen */
+.img-con-texto {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.img-con-texto > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.img-con-texto > .texto-sobre-img {
+  position: absolute;
+  bottom: 7%;
+  right: 5%;
+  font-family: 'Barlow Condensed', sans-serif;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.texto-sobre-img > .linea-superior {
+  background-color: var(--color-overlay-text);
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 1.2rem;
+}
+
+.texto-sobre-img > .linea-inferior {
+  display: block;
+  color: #000;
+  margin-top: 4px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Nuestros kits - opciones */
+.opciones {
+  padding: 1px 10px 15px 10px;
+}
+
+.contenedor-opciones {
+  max-width: 1100px;
+  margin: 0 auto;         
+  text-align: center;   
+  background-color: #dddddd;  
+  padding: 2em 1em 0em 1em;
+}
+
+.opciones h3{
+  font-size: 1.5em;
+  margin-bottom: 1.5em;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+.opciones img {
+  width: 600px;
+  max-width: 100%;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;   
+}
+
+/* Tienda cercana */
+.store-section {
+  position: relative;
+  width: 100%;
+  height: 350px; 
+  margin: auto;
+  background-image: url('../img/kits/cerca_tuyo.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.store-section > .store-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.store-text > h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--color-acento);  
+  text-transform: uppercase;
+}
+
+.store-text > h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+  color: var(--color-principal-oscuro);
+  text-transform: uppercase;
+}
+
+.store-text > p {
+  font-size: 1rem;
+  color: var(--color-principal-oscuro);
+  margin-bottom: 20px;
+}
+
+.store-text > .store-button:link,
+.store-text > .store-button:visited {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: transparent; 
+  color: var(--color-acento);
+  border: 2px solid var(--color-acento);
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+.store-text > .store-button:hover,
+.store-text > .store-button:focus {
+  border: 4px solid var(--color-acento-hover);
+  outline: none; 
+}
+
+.store-text > .store-button:active {
+  border-color: var(--color-acento);
+  color: white;
+}
 
 
 /*///////////////// TIENDA //////////////////*/
@@ -636,6 +884,35 @@ img {
 
 /*///////////////// RESPONSIVE //////////////////*/
 
+/* Tablet horizontal */
+@media (max-width: 1080px) {
+  .galeria {
+    padding: 32px 32px 1px 32px;
+  }
+
+  .kits-text > h1 {
+    font-size: 2rem;
+  }
+
+  .kits-text > h2 {
+    font-size: 1.2rem;
+  }
+
+  .kits-text > p {
+    font-size: 1.1rem;
+    max-width: 90%;
+  }
+
+  .alto-a {
+    height: 450px;
+  }
+
+  .alto-b {
+    height: 220px;
+  }
+}
+
+/* Tablet vertical */
 @media (max-width: 768px) {
   .nav-links {
     flex-direction: column;
@@ -681,6 +958,35 @@ img {
   .form-group {
     width: 100%; 
   }
+
+  .kits-text > h1 {
+    font-size: 1.7rem;
+  }
+
+  .kits-text > h2 {
+    font-size: 1.1rem;
+  }
+
+  .kits-text > p {
+    font-size: 1rem;
+  }
+
+  .alto-a {
+    height: 350px;
+  }
+
+  .alto-b {
+    height: 170px;
+  }
+  
+  .galeria {
+    flex-direction: column;
+    padding: 32px 16px 1px 16px;
+  }
+
+  .columna {
+    max-width: 100%;
+  }
 }
 
 /* Mobil 1 */
@@ -703,4 +1009,77 @@ img {
   .grid {
     grid-template-columns: 1fr;
   }
+
+  .kits-text > h1 {
+    font-size: 1.3rem;
+  }
+
+  .kits-text > h2 {
+    font-size: 1rem;
+  }
+
+  .kits-text > p {
+    font-size: 0.9rem;
+  }
+
+  .alto-a {
+    height: 300px;
+  }
+
+  .alto-b {
+    height: 140px;
+  }
+  
+  .store-text > h1 {
+    font-size: 2rem;
+  }
+
+  .store-text > h2 {
+    font-size: 1.2rem;
+  }
+
+  .store-text > p {
+    font-size: 0.9rem;
+  }
+
+  /* Mobil 2 */
+@media (max-width: 375px) {
+  .kits-text > h1 {
+    font-size: 1.1rem;
+  }
+
+  .kits-text > h2 {
+    font-size: 0.9rem;
+  }
+
+  .kits-text > p {
+    font-size: 0.8rem;
+  }
+
+  .alto-a {
+    height: 250px;
+  }
+
+  .alto-b {
+    height: 120px;
+  }
+
+  .store-text > h1 {
+    font-size: 1.5rem;
+  }
+
+  .store-text > h2 {
+    font-size: 1rem;
+  }
+
+  .store-text > p {
+    font-size: 0.8rem;
+  }
+
+  .store-text > .store-button:link,
+  .store-text > .store-button:visited {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
 }
