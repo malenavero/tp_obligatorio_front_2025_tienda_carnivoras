@@ -332,6 +332,9 @@ form textarea {
   display: flex;
   gap: 26px;
   padding: 64px 64px 1px 64px;
+  justify-content: center;
+  align-items: start;
+  flex-wrap: wrap;
 }
 
 /* Cada columna */
@@ -339,8 +342,7 @@ form textarea {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 0;
-  max-width: 600px;
+  min-width: 300px;
 }
 
 /* Cada grupo de imágenes (a + b + b) o (b + b + a) */
@@ -530,15 +532,14 @@ form textarea {
 /*///////////////// TIENDA //////////////////*/
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(320px, 1fr)); 
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
   row-gap: 50px;
-  column-gap: 10px; 
+  column-gap: 10px;  
   padding: 50px;
-  padding-left: 300px;
-  padding-right: 300px;
-
-  justify-items: center;
+  max-width: 1200px; 
+  margin: 0 auto; 
 }
+
 
 .card {
   width: 100%;
