@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loadHTML('footer-placeholder', 'footer.html');
 });
 
-/* Slide y botones*/
+/* SLIDE PRINCIPAL Y BOTONES*/
 
 document.addEventListener('DOMContentLoaded', () => {
     const slides = document.querySelectorAll('.slide');
@@ -70,5 +70,35 @@ document.querySelector('.prev').addEventListener('click', () => {
   currentIndex = (currentIndex - 1 + slides.length) % slides.length;
   slides[currentIndex].classList.add('active');
 });
+
+/*SLIDER DE PRODUCTOS*/
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+const grid = document.querySelector('.grid');
+const card = document.querySelector('.card');
+const cardWidth = card.offsetWidth;
+const cardsVisible = 5;
+const cardMarginRight = 20;
+
+let scrollPosition = 0;
+
+prevBtn.addEventListener('click', () => {
+  scrollPosition -= cardWidth * cardsVisible;
+  if (scrollPosition < 0) scrollPosition = 0;
+  grid.style.transform = `translateX(-${scrollPosition}px)`;
+});
+
+nextBtn.addEventListener('click', () => {
+  const maxScroll = grid.scrollWidth - grid.clientWidth;
+  scrollPosition += cardWidth * cardsVisible;
+  if (scrollPosition > maxScroll) scrollPosition = maxScroll;
+  grid.style.transform = `translateX(-${scrollPosition}px)`;
+});
+
+
+
+
+
+
 
   
