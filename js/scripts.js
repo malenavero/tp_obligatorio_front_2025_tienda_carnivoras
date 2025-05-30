@@ -31,3 +31,44 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     loadHTML('footer-placeholder', 'footer.html');
 });
+
+/* Slide y botones*/
+
+document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.slide');
+    let currentIndex = 0;
+  
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+  
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    }
+  
+    // Mostrar la primer slide al cargar
+    showSlide(currentIndex);
+  
+    // Cambiar de slide cada 4 segundos
+    setInterval(nextSlide, 20000);
+  });
+
+  const slides = document.querySelectorAll('.slide');
+let currentIndex = 0;
+
+document.querySelector('.next').addEventListener('click', () => {
+  slides[currentIndex].classList.remove('active');
+  currentIndex = (currentIndex + 1) % slides.length;
+  slides[currentIndex].classList.add('active');
+});
+
+document.querySelector('.prev').addEventListener('click', () => {
+  slides[currentIndex].classList.remove('active');
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  slides[currentIndex].classList.add('active');
+});
+
+  
