@@ -5,7 +5,7 @@ Este repositorio contiene una página web clonada basada en una tienda de café,
 El desarrollo fue realizado utilizando HTML, CSS y JavaScript, manteniendo la estructura general del sitio original, pero adaptando el diseño visual con una paleta en tonos verdes para reflejar una estética más natural y relacionada con las plantas.
 
 Se desarrollaron las siguientes pantallas:
-Inicio (Index), Tienda, Menú de Tienda, Franquicias, Contacto, Trabajá con Nosotros y Tutoriales.
+Inicio (Index), Tienda, Nuestros Kits, Franquicias, Contacto, Trabajá con Nosotros y Tutoriales.
 
 ---  
 ### 👩🏻‍💻 Equipo
@@ -34,7 +34,7 @@ Inicio (Index), Tienda, Menú de Tienda, Franquicias, Contacto, Trabajá con Nos
 ├── footer.html         # Footer reutilizable
 ├── franquicias.html    # Formulario para solicitar franquicias
 ├── header.html         # Header reutilizable
-├── menu-tienda.html    # Menu tienda
+├── menu-tienda.html    # Nuestros Kits
 ├── tienda.html         # Tienda
 ├── trabaja-en-tdc.html # Formulario postulaciones laborales
 ├── tutoriales.html     # Tutoriales de cuidados.
