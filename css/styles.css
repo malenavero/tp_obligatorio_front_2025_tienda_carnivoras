@@ -24,6 +24,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   background-color: var(--color-fondo);
   color: var(--color-texto);
+  padding-top: 60px;
 }
 
 h1, h2, h3, .btn {
@@ -47,6 +48,7 @@ ul {
   padding: 15px 0; 
   display: flex;
   justify-content: center;
+  position:fixed;
 }
 
 .main-header .container {
@@ -55,6 +57,7 @@ ul {
   align-items: center;
   width: 90%; 
   max-width: 1200px;
+  z-index:1000;
 }
 
 .logo {
@@ -120,6 +123,135 @@ footer {
 
 
 /*///////////////// INDEX //////////////////*/
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 120vh; 
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0; left: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide.active {
+  opacity: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.slide-text {
+  position: absolute;
+  top:20%;
+  transform:translateY(50%);
+  left:10%;
+  z-index:10;
+  color: white;
+  padding: 20px;
+  max-width: 40%;
+  border-radius: 8px;
+  text-align:left;
+  display:flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .slide-text {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80%;
+    text-align: left;
+  }
+}
+
+.slide-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.slide-text p {
+  font-size: 1.2rem;
+}
+
+.slide-btn {
+  width: fit-content;
+  display: inline-block;
+  border: 2px solid white;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  cursor:pointer;
+  transition: background-color 0.3s ease;
+}
+
+.slide-btn:hover {
+  background-color: transparent; 
+}
+
+/* Flechas de navegación */
+.hero button.prev,
+.hero button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  border: none;
+  font-size: 2em;
+  padding: 10px 15px;
+  cursor: pointer;
+  background:none;
+  z-index: 20;
+  opacity: 0 !important;
+  transition: opacity 0.3s ease, transform 0.3s ease !important;
+  transform:translateY(-50%);
+}
+
+.prev {
+  left: 0;
+  transform: translate(-50px, -50%);
+}
+
+.next {
+  right: 0;
+  transform: translate(50px, -50%); 
+}
+
+.hero:hover .prev {
+  opacity: 1 !important;
+  transform: translate(0, -50%); 
+}
+
+.hero:hover .next {
+  opacity: 1 !important;
+  transform: translate(0, -50%);
+}
+
+.hero button.prev {
+  left: 20px;
+}
+
+.hero button.next {
+  right: 20px;
+}
+
+
+
+
+
 
 
 /*///////////////// CONTACTO //////////////////*/
