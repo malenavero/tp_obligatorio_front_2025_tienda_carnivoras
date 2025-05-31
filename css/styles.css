@@ -47,8 +47,6 @@ ul {
   list-style: none;
 }
 
-/*/////////////////HEADER//////////////////*/
-
 
 /*///////////////// NAV //////////////////*/
 .main-header {
@@ -174,7 +172,9 @@ footer {
   text-align:left;
   display:flex;
   flex-direction: column;
+  font-family: "Bebas Neue";
 }
+
 
 @media (max-width: 768px) {
   .slide-text {
@@ -186,6 +186,7 @@ footer {
 }
 
 .slide-text h1 {
+  font-family: "Bebas Neue";
   font-size: 2.5rem;
   margin-bottom: 10px;
 }
@@ -263,9 +264,6 @@ footer {
 .carousel-container {
   margin: 0;
   padding: 0;
-}
-
-.carousel-container {
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -294,16 +292,24 @@ footer {
   display: block;
 }
 
+.grid {
+  display: flex;
+  overflow: hidden;
+  overflow-x:auto;
+  scroll-behavior: smooth;
+  transition: transform 0.3s ease;
+}
+
 .carousel-btn {
+  background: none;
+  border: none;
+  color: gray;
+  font-size: 2em;
+  cursor: pointer;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 10;
-  background-color: transparent;
-  color: rgb(97, 97, 97);
-  border: none;
-  padding: 10px;
-  cursor: pointer;
+  z-index: 1000;
 }
 
 .prev-btn {
@@ -314,8 +320,124 @@ footer {
   right: 10px;
 }
 
+.plant-name{
+  font-family:"Bebas Neue";
+}
+
 /*Cards anchors para ingresar a otras secciones*/
 
+.middle{
+  display:flex;
+  flex-direction: row;
+  margin:1em;
+  padding:1em;
+  align-items: stretch;
+}
+
+.image-link {
+  display: inline-block;
+  width: 48%;
+  height: 40%;
+  margin: 1%;
+  text-decoration: none;
+  color: inherit;
+  vertical-align: top;
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px; 
+  height: 100%;
+  aspect-ratio: 16/9;
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.image-container:hover img {
+  transform: scale(1.1);
+}
+
+
+.text-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  z-index: 10;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+  pointer-events: none; 
+}
+
+.text-overlay p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.text-overlay h1 {
+  margin: 5px 0 0 0;
+  font-size: 1.5rem;
+}
+
+/*Artículos*/
+
+.tittle{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Bebas Neue";
+}
+
+.tittle h1{
+  font-size: 3em;
+  font-family: "Bebas Neue";
+}
+
+.tittle.one{
+  margin-top: 2em;
+  font-family: "Bebas Neue";
+}
+
+.article{
+  display:flex;
+  flex-direction:row;
+  margin:1em;
+  padding:1em;
+}
+
+.words{
+  width:33%;
+  margin:1em;
+  padding:1em;
+  align-self: center;
+}
+
+.words h1{
+  font-family: "Bebas Neue";
+  color:var(--color-acento-hover);
+}
+
+.image{
+  width:fit-content;
+  align-self: center;
+}
+
+.words.one{
+  text-align:right;
+  font-family: "Mulish", sans-serif;
+  color:var(--color-texto-medio);
+}
+
+.words.two{
+  font-family: "Mulish", sans-serif;
+  color:var(--color-texto-medio);
+}
 
 
 
