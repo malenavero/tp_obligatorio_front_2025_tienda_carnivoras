@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.querySelector('.next-btn');
     const grid = document.querySelector('.carousel-track');
     const cards = document.querySelectorAll('.card');
-    const dotsContainer = document.querySelector('.carousel-dots');
+    const dotsContainer = document.querySelector('.product-dots');
 
     if (!grid || cards.length === 0) return;
 

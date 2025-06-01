@@ -238,7 +238,7 @@ footer {
 
 /* Puntos del carrousel */
 
-.carousel-dots {
+.hero-dots {
   position: absolute;
   bottom: 20px;
   left: 50%;
@@ -248,7 +248,7 @@ footer {
   z-index: 15;
 }
 
-.carousel-dots .dot {
+.hero-dots .dot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -257,7 +257,7 @@ footer {
   transition: background-color 0.3s ease;
 }
 
-.carousel-dots .dot.active {
+.hero-dots .dot.active {
   background-color: white;
 }
 
@@ -387,7 +387,7 @@ footer {
   background: none;
   border: none;
   color: gray;
-  font-size: 2.5em; /* un poco más grandes */
+  font-size: 2.5em; 
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -413,6 +413,27 @@ footer {
 .next-btn {
   right: 0; 
 }
+.product-dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.carousel-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: var(--color-texto-claro);
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-dot.active {
+  background: var(--color-texto-fuerte);
+}
+
+
 
 
 /*Cards anchors para ingresar a otras secciones*/
