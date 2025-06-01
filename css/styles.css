@@ -515,7 +515,7 @@ footer {
 .article {
   display: flex;
   flex-direction: row;
-  align-items: flex-start; /* Change from stretch to flex-start */
+  align-items: flex-start; 
   gap: 0.2em;
   max-width: 1200px;
   margin: 0 auto;
@@ -524,7 +524,7 @@ footer {
 .words {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Ensure text content starts from the top */
+  justify-content: flex-start; 
   color: var(--color-texto-medio);
 }
 
@@ -543,7 +543,7 @@ footer {
   color: var(--color-acento-hover);
   text-transform: uppercase;
   margin-bottom: 0.5em;
-  margin-top: 1.5em; /* Keep existing margin-top for spacing */
+  margin-top: 1.5em;
   font-size: 1.5em;
   opacity: 0.6;
 }
@@ -554,7 +554,7 @@ footer {
   flex-basis: 40%;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Align image to the top within its container */
+  align-items: flex-start;
 }
 
 .image img {
