@@ -332,10 +332,8 @@ footer {
 
 .title h1 {
   position: relative;
-  font-size: 3em;
-  font-family: var(--font-family-secu);
+  font-size: 2.5em;
   color: var(--color-texto-fuerte);
-  margin-top: 0.5em;
   margin-bottom: 1em;
 }
 
@@ -460,6 +458,8 @@ footer {
   margin:1em;
   padding:1em;
   align-items: stretch;
+      text-transform: uppercase;
+
 }
 
 .image-link {
@@ -511,46 +511,58 @@ footer {
   margin: 5px 0 0 0;
   font-size: 1.5rem;
 }
-
-/*Artículos*/
-
-
-
-.article{
-  display:flex;
-  flex-direction:row;
-  margin:1em;
-  padding:1em;
+/* Artículos */
+.article {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; /* Change from stretch to flex-start */
+  gap: 0.2em;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.words{
-  width:33%;
-  margin:1em;
-  padding:1em;
-  align-self: center;
+.words {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Ensure text content starts from the top */
+  color: var(--color-texto-medio);
 }
 
-.words h1{
-  font-family: var(--font-family-secu); 
-  color:var(--color-acento-hover);
+.words.one {
+  text-align: right;
+  margin-right: 2em;
 }
 
-.image{
-  width:fit-content;
-  align-self: center;
+.words.two {
+  text-align: left;
+  margin-left: 2em;
 }
 
-.words.one{
-  text-align:right;
-  font-family: "Mulish", sans-serif;
-  color:var(--color-texto-medio);
+.words h1 {
+  font-family: var(--font-family);
+  color: var(--color-acento-hover);
+  text-transform: uppercase;
+  margin-bottom: 0.5em;
+  margin-top: 1.5em; /* Keep existing margin-top for spacing */
+  font-size: 1.5em;
+  opacity: 0.6;
 }
 
-.words.two{
-  font-family: "Mulish", sans-serif;
-  color:var(--color-texto-medio);
+.image {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align image to the top within its container */
 }
 
+.image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
 /*SECCIÓN FINAL*/
 
 .image-end {
