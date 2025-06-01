@@ -55,6 +55,7 @@ ul {
   position: fixed;
   top: 0;
   left: 0;
+    z-index: 9999;
   width: 100%;
   background-color: var(--color-principal-oscuro);
   color: var(--color-principal-claro);
