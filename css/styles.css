@@ -30,6 +30,7 @@ body {
   font-family: var(--font-family); 
   background-color: var(--color-fondo);
   color: var(--color-texto-fuerte);
+  color: var(--color-texto);
   padding-top: 50px;
 }
 
@@ -59,6 +60,7 @@ ul {
   padding: 15px 0;
   display: flex;
   justify-content: center;
+  position:fixed;
 }
 
 .main-header .container {
@@ -67,6 +69,7 @@ ul {
   align-items: center;
   width: 90%;
   max-width: 1200px;
+  z-index:1000;
 }
 
 .logo {
@@ -132,6 +135,402 @@ footer {
 
 
 /*///////////////// INDEX //////////////////*/
+
+/*SLIDER DE FOTOS*/
+.hero {
+  position: relative;
+  width: 100%;
+  height: 120vh; 
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0; left: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide.active {
+  opacity: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.slide-text {
+  position: absolute;
+  top:20%;
+  transform:translateY(50%);
+  left:10%;
+  z-index:10;
+  color: white;
+  padding: 20px;
+  max-width: 40%;
+  border-radius: 8px;
+  text-align:left;
+  display:flex;
+  flex-direction: column;
+  font-family: "Bebas Neue";
+}
+
+
+@media (max-width: 768px) {
+  .slide-text {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80%;
+    text-align: left;
+  }
+}
+
+.slide-text h1 {
+  font-family: "Bebas Neue";
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.slide-text p {
+  font-size: 1.2rem;
+}
+
+.slide-btn {
+  width: fit-content;
+  display: inline-block;
+  border: 2px solid white;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  cursor:pointer;
+  transition: background-color 0.3s ease;
+}
+
+.slide-btn:hover {
+  background-color: transparent; 
+}
+
+/* Flechas de navegación */
+.hero button.prev,
+.hero button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  border: none;
+  font-size: 2em;
+  padding: 10px 15px;
+  cursor: pointer;
+  background:none;
+  z-index: 20;
+  opacity: 0 !important;
+  transition: opacity 0.3s ease, transform 0.3s ease !important;
+  transform:translateY(-50%);
+}
+
+.prev {
+  left: 0;
+  transform: translate(-50px, -50%);
+}
+
+.next {
+  right: 0;
+  transform: translate(50px, -50%); 
+}
+
+.hero:hover .prev {
+  opacity: 1 !important;
+  transform: translate(0, -50%); 
+}
+
+.hero:hover .next {
+  opacity: 1 !important;
+  transform: translate(0, -50%);
+}
+
+.hero button.prev {
+  left: 20px;
+}
+
+.hero button.next {
+  right: 20px;
+}
+
+/*SLIDER DE PRODUCTOS*/
+
+.carousel-container {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-viewport {
+  width: 100%;
+  overflow: hidden;
+  padding:0;
+  margin:0;
+}
+
+.carousel-container .grid {
+  display: flex;
+  transition: transform 0.3s ease;
+  margin-left: -10px;
+}
+
+.card {
+  flex: 0 0 calc(100% / 5); 
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.grid {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+.carousel-btn {
+  background: none;
+  border: none;
+  color: gray;
+  font-size: 2em;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+.plant-name{
+  font-family:"Bebas Neue";
+}
+
+/*Cards anchors para ingresar a otras secciones*/
+
+.middle{
+  display:flex;
+  flex-direction: row;
+  margin:1em;
+  padding:1em;
+  align-items: stretch;
+}
+
+.image-link {
+  display: inline-block;
+  width: 48%;
+  height: 40%;
+  margin: 1%;
+  text-decoration: none;
+  color: inherit;
+  vertical-align: top;
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px; 
+  height: 100%;
+  aspect-ratio: 16/9;
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.image-container:hover img {
+  transform: scale(1.1);
+}
+
+
+.text-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  z-index: 10;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+  pointer-events: none; 
+}
+
+.text-overlay p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.text-overlay h1 {
+  margin: 5px 0 0 0;
+  font-size: 1.5rem;
+}
+
+/*Artículos*/
+
+.tittle{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Bebas Neue";
+}
+
+.tittle h1{
+  font-size: 3em;
+  font-family: "Bebas Neue";
+}
+
+.tittle.one{
+  margin-top: 2em;
+  font-family: "Bebas Neue";
+}
+
+.article{
+  display:flex;
+  flex-direction:row;
+  margin:1em;
+  padding:1em;
+}
+
+.words{
+  width:33%;
+  margin:1em;
+  padding:1em;
+  align-self: center;
+}
+
+.words h1{
+  font-family: "Bebas Neue";
+  color:var(--color-acento-hover);
+}
+
+.image{
+  width:fit-content;
+  align-self: center;
+}
+
+.words.one{
+  text-align:right;
+  font-family: "Mulish", sans-serif;
+  color:var(--color-texto-medio);
+}
+
+.words.two{
+  font-family: "Mulish", sans-serif;
+  color:var(--color-texto-medio);
+}
+
+/*SECCIÓN FINAL*/
+
+.image-end {
+  position: relative;
+  width: 100%;
+  height: 32em; 
+  overflow: hidden;
+  margin-top: 2em;
+}
+
+.image-end img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.text-overlay-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3); /* un fondo semitransparente para contraste */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family:"Bebas Neue";
+  padding: 20px;
+}
+
+.text-overlay-2 h1{
+  font-family:"Bebas Neue";
+}
+
+
+.text-overlay-2 h1 {
+  font-size: 2em;
+  margin: 0.5em 0;
+}
+
+.text-overlay-2 p {
+  font-size: 1.2em;
+  margin: 0.5em 0;
+}
+
+.slide-btn {
+  width: fit-content;
+  display: inline-block;
+  border: 2px solid white;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  cursor:pointer;
+  transition: background-color 0.3s ease;
+}
+
+.slide-btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*///////////////// CONTACTO //////////////////*/
@@ -605,7 +1004,7 @@ form textarea {
 img {
   max-width: 100%;
   height: auto;
-  vertical-align: middle;
+  /*vertical-align: middle;*/
   border: 0;
   display: block;
 }

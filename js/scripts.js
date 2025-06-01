@@ -31,3 +31,74 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     loadHTML('footer-placeholder', 'footer.html');
 });
+
+/* SLIDE PRINCIPAL Y BOTONES*/
+
+document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.slide');
+    let currentIndex = 0;
+  
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+  
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    }
+  
+    // Mostrar la primer slide al cargar
+    showSlide(currentIndex);
+  
+    // Cambiar de slide cada 4 segundos
+    setInterval(nextSlide, 20000);
+  });
+
+  const slides = document.querySelectorAll('.slide');
+let currentIndex = 0;
+
+document.querySelector('.next').addEventListener('click', () => {
+  slides[currentIndex].classList.remove('active');
+  currentIndex = (currentIndex + 1) % slides.length;
+  slides[currentIndex].classList.add('active');
+});
+
+document.querySelector('.prev').addEventListener('click', () => {
+  slides[currentIndex].classList.remove('active');
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  slides[currentIndex].classList.add('active');
+});
+
+/*SLIDER DE PRODUCTOS*/
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+const grid = document.querySelector('.grid');
+const card = document.querySelector('.card');
+const cardWidth = card.offsetWidth;
+const cardsVisible = 5;
+const cardMarginRight = 20;
+
+let scrollPosition = 0;
+
+prevBtn.addEventListener('click', () => {
+  scrollPosition -= cardWidth * cardsVisible;
+  if (scrollPosition < 0) scrollPosition = 0;
+  grid.style.transform = `translateX(-${scrollPosition}px)`;
+});
+
+nextBtn.addEventListener('click', () => {
+  const maxScroll = grid.scrollWidth - grid.clientWidth;
+  scrollPosition += cardWidth * cardsVisible;
+  if (scrollPosition > maxScroll) scrollPosition = maxScroll;
+  grid.style.transform = `translateX(-${scrollPosition}px)`;
+});
+
+
+
+
+
+
+
+  
