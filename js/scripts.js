@@ -1,4 +1,6 @@
-// Función para cargar HTML desde un archivo
+// ======================================
+// CARGA DE HEADER Y FOOTER DINÁMICOS
+// ======================================
 function loadHTML(elementId, filePath, callback) {
     fetch(filePath)
         .then(response => {
@@ -14,7 +16,6 @@ function loadHTML(elementId, filePath, callback) {
         .catch(error => console.error('Error loading HTML:', error));
 }
 
-// Cargar header y footer
 document.addEventListener('DOMContentLoaded', () => {
     loadHTML('header-placeholder', 'header.html', () => {
         const currentPath = window.location.pathname.split('/').pop();
@@ -27,13 +28,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
     loadHTML('footer-placeholder', 'footer.html');
 });
 
-// ===========================
-// SLIDE PRINCIPAL Y BOTONES
-// ===========================
-
+// ======================================
+// SLIDER PRINCIPAL CON FLECHAS Y DOTS
+// ======================================
 document.addEventListener('DOMContentLoaded', () => {
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
@@ -59,8 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
         showSlide(newIndex);
     }
 
-    document.querySelector('.next').addEventListener('click', nextSlide);
-    document.querySelector('.prev').addEventListener('click', prevSlide);
+    document.querySelector('.next')?.addEventListener('click', nextSlide);
+    document.querySelector('.prev')?.addEventListener('click', prevSlide);
 
     dots.forEach((dot, index) => {
         dot.addEventListener('click', () => showSlide(index));
@@ -68,32 +69,67 @@ document.addEventListener('DOMContentLoaded', () => {
 
     showSlide(currentIndex);
 
-    setInterval(nextSlide, 20000);
+    setInterval(nextSlide, 20000); // Auto-slide cada 20 segundos
 });
 
-// ===========================
-// SLIDER DE PRODUCTOS
-// ===========================
+// ======================================
+// CARRUSEL DE PRODUCTOS (5 CARDS POR VEZ)
+// ======================================
+document.addEventListener('DOMContentLoaded', () => {
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const grid = document.querySelector('.carousel-track');
+    const cards = document.querySelectorAll('.card');
+    const dotsContainer = document.querySelector('.carousel-dots');
 
-const prevBtn = document.querySelector('.prev-btn');
-const nextBtn = document.querySelector('.next-btn');
-const grid = document.querySelector('.grid');
-const card = document.querySelector('.card');
-const cardWidth = card.offsetWidth;
-const cardsVisible = 5;
-const cardMarginRight = 20;
+    if (!grid || cards.length === 0) return;
 
-let scrollPosition = 0;
+    const cardsPerSlide = 5;
+    const totalSlides = Math.ceil(cards.length / cardsPerSlide);
+    let currentSlide = 0;
 
-prevBtn.addEventListener('click', () => {
-    scrollPosition -= cardWidth * cardsVisible;
-    if (scrollPosition < 0) scrollPosition = 0;
-    grid.style.transform = `translateX(-${scrollPosition}px)`;
-});
+    // Crear los dots dinámicamente
+    for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('span');
+        dot.classList.add('carousel-dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => {
+            currentSlide = i;
+            updateSlider();
+        });
+        dotsContainer?.appendChild(dot);
+    }
 
-nextBtn.addEventListener('click', () => {
-    const maxScroll = grid.scrollWidth - grid.clientWidth;
-    scrollPosition += cardWidth * cardsVisible;
-    if (scrollPosition > maxScroll) scrollPosition = maxScroll;
-    grid.style.transform = `translateX(-${scrollPosition}px)`;
+    const dots = document.querySelectorAll('.carousel-dot');
+
+    function updateSlider() {
+      const cardWidth = cards[0].offsetWidth;
+      const gap = parseInt(getComputedStyle(grid).gap) || 0;
+
+      const scrollPosition = (cardWidth + gap) * cardsPerSlide * currentSlide;
+      grid.style.transform = `translateX(-${scrollPosition}px)`;
+
+      dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentSlide);
+      });
+    }
+
+
+    prevBtn?.addEventListener('click', () => {
+        if (currentSlide > 0) {
+            currentSlide--;
+            updateSlider();
+        }
+    });
+
+    nextBtn?.addEventListener('click', () => {
+        if (currentSlide < totalSlides - 1) {
+            currentSlide++;
+            updateSlider();
+        }
+    });
+
+    window.addEventListener('resize', updateSlider);
+
+    updateSlider();
 });

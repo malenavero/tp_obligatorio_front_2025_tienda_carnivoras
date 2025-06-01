@@ -14,6 +14,8 @@
   --color-overlay-bg-hover: rgba(0, 0, 0, 0.5);
   --color-overlay-text: #fff;
   --font-family: 'Barlow Condensed', sans-serif;
+  --font-family-secu: 'Bebas Neue', sans-serif;
+  --font-family-fina: 'Mulish', sans-serif;
 
 }
 
@@ -186,7 +188,7 @@ footer {
   text-align: left;
   display: flex;
   flex-direction: column;
-  font-family: "Bebas Neue";
+  font-family: var(--font-family-secu);
 }
 
 
@@ -205,7 +207,7 @@ footer {
 }
 
 .slide-text h1 {
-  font-family: "Bebas Neue";
+  font-family: var(--font-family-secu); 
   font-size: 3.5rem; 
   margin-bottom: 15px;
 }
@@ -298,35 +300,81 @@ footer {
   stroke-width: 1.2;
 }
 
+/* CONTENEDOR MAIN MARGEN */
+.contenedor-margen {
+  margin: 200px;
+}
 
-/*SLIDER DE PRODUCTOS*/
+.title{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-family); 
+    text-transform: uppercase;
+
+}
+
+.title h1 {
+  position: relative;
+  font-size: 3em;
+  font-family: var(--font-family-secu);
+  color: var(--color-texto-fuerte);
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+}
+
+.title h1::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5em;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 33.33%;
+  height: 2px;
+  background-color: var(--color-texto-fuerte);
+  border-radius: 2px;
+}
+
+.title p {
+  font-family: var(--font-family-fina);
+  font-weight: 100;
+  font-size: 1.2em;
+  color: var(--color-acento-hover);
+  margin-bottom: 0; 
+  margin-top: 0.1em;
+  opacity: 0.6;
+  letter-spacing: 0.5px;
+}
+
+
+
+/* SLIDER DE PRODUCTOS */
 
 .carousel-container {
-  margin: 0;
-  padding: 0;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   width: 100%;
+  margin: 0 auto;
+  padding: 0 50px; /* espacio a los lados para que las flechas esten afuera */
 }
 
 .carousel-viewport {
-  width: 100%;
   overflow: hidden;
-  padding:0;
-  margin:0;
+  width: 100%;
 }
-
-.carousel-container .grid {
+.carousel-track {
   display: flex;
+  gap: 8px;
   transition: transform 0.3s ease;
-  margin-left: -10px;
+  will-change: transform;
 }
 
 .card {
-  flex: 0 0 calc(100% / 5); 
+  flex: 0 0 calc((100% - 4 * 8px) / 5);
   box-sizing: border-box;
   padding: 10px;
 }
+
 
 .card img {
   width: 100%;
@@ -334,34 +382,38 @@ footer {
   display: block;
 }
 
-.grid {
-  display: flex;
-  transition: transform 0.3s ease;
-}
-
+/* Flechas */
 .carousel-btn {
   background: none;
   border: none;
   color: gray;
-  font-size: 2em;
+  font-size: 2.5em; /* un poco más grandes */
   cursor: pointer;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 1000;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.carousel-btn:hover {
+  color: black;
 }
 
 .prev-btn {
-  left: 10px;
+  left: 0; 
 }
 
 .next-btn {
-  right: 10px;
+  right: 0; 
 }
 
-.plant-name{
-  font-family:"Bebas Neue";
-}
 
 /*Cards anchors para ingresar a otras secciones*/
 
@@ -426,22 +478,7 @@ footer {
 
 /*Artículos*/
 
-.tittle{
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: "Bebas Neue";
-}
 
-.tittle h1{
-  font-size: 3em;
-  font-family: "Bebas Neue";
-}
-
-.tittle.one{
-  margin-top: 2em;
-  font-family: "Bebas Neue";
-}
 
 .article{
   display:flex;
@@ -458,7 +495,7 @@ footer {
 }
 
 .words h1{
-  font-family: "Bebas Neue";
+  font-family: var(--font-family-secu); 
   color:var(--color-acento-hover);
 }
 
@@ -502,18 +539,18 @@ footer {
   width: 100%;
   height: 100%;
   color: white;
-  background-color: rgba(0, 0, 0, 0.3); /* un fondo semitransparente para contraste */
+  background-color: rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-family:"Bebas Neue";
+  font-family:var(--font-family-secu); 
   padding: 20px;
 }
 
 .text-overlay-2 h1{
-  font-family:"Bebas Neue";
+  font-family:var(--font-family-secu); 
 }
 
 
