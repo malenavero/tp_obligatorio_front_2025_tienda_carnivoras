@@ -29,7 +29,6 @@
 body {
   font-family: var(--font-family); 
   background-color: var(--color-fondo);
-  color: var(--color-texto-fuerte);
   color: var(--color-texto);
   padding-top: 50px;
 }
@@ -510,27 +509,6 @@ footer {
   background-color: #fff;
   color: #000;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*///////////////// CONTACTO //////////////////*/
