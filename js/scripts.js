@@ -9,14 +9,12 @@ function loadHTML(elementId, filePath, callback) {
         })
         .then(data => {
             document.getElementById(elementId).innerHTML = data;
-            if (callback) {
-                callback();
-            }
+            if (callback) callback();
         })
         .catch(error => console.error('Error loading HTML:', error));
 }
 
-// Cargar el header cuando el DOM esté listo
+// Cargar header y footer
 document.addEventListener('DOMContentLoaded', () => {
     loadHTML('header-placeholder', 'header.html', () => {
         const currentPath = window.location.pathname.split('/').pop();
@@ -32,46 +30,51 @@ document.addEventListener('DOMContentLoaded', () => {
     loadHTML('footer-placeholder', 'footer.html');
 });
 
-/* SLIDE PRINCIPAL Y BOTONES*/
+// ===========================
+// SLIDE PRINCIPAL Y BOTONES
+// ===========================
 
 document.addEventListener('DOMContentLoaded', () => {
     const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
     let currentIndex = 0;
-  
+
     function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-      });
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+        currentIndex = index;
     }
-  
+
     function nextSlide() {
-      currentIndex = (currentIndex + 1) % slides.length;
-      showSlide(currentIndex);
+        const newIndex = (currentIndex + 1) % slides.length;
+        showSlide(newIndex);
     }
-  
-    // Mostrar la primer slide al cargar
+
+    function prevSlide() {
+        const newIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(newIndex);
+    }
+
+    document.querySelector('.next').addEventListener('click', nextSlide);
+    document.querySelector('.prev').addEventListener('click', prevSlide);
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => showSlide(index));
+    });
+
     showSlide(currentIndex);
-  
-    // Cambiar de slide cada 4 segundos
+
     setInterval(nextSlide, 20000);
-  });
-
-  const slides = document.querySelectorAll('.slide');
-let currentIndex = 0;
-
-document.querySelector('.next').addEventListener('click', () => {
-  slides[currentIndex].classList.remove('active');
-  currentIndex = (currentIndex + 1) % slides.length;
-  slides[currentIndex].classList.add('active');
 });
 
-document.querySelector('.prev').addEventListener('click', () => {
-  slides[currentIndex].classList.remove('active');
-  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-  slides[currentIndex].classList.add('active');
-});
+// ===========================
+// SLIDER DE PRODUCTOS
+// ===========================
 
-/*SLIDER DE PRODUCTOS*/
 const prevBtn = document.querySelector('.prev-btn');
 const nextBtn = document.querySelector('.next-btn');
 const grid = document.querySelector('.grid');
@@ -83,22 +86,14 @@ const cardMarginRight = 20;
 let scrollPosition = 0;
 
 prevBtn.addEventListener('click', () => {
-  scrollPosition -= cardWidth * cardsVisible;
-  if (scrollPosition < 0) scrollPosition = 0;
-  grid.style.transform = `translateX(-${scrollPosition}px)`;
+    scrollPosition -= cardWidth * cardsVisible;
+    if (scrollPosition < 0) scrollPosition = 0;
+    grid.style.transform = `translateX(-${scrollPosition}px)`;
 });
 
 nextBtn.addEventListener('click', () => {
-  const maxScroll = grid.scrollWidth - grid.clientWidth;
-  scrollPosition += cardWidth * cardsVisible;
-  if (scrollPosition > maxScroll) scrollPosition = maxScroll;
-  grid.style.transform = `translateX(-${scrollPosition}px)`;
+    const maxScroll = grid.scrollWidth - grid.clientWidth;
+    scrollPosition += cardWidth * cardsVisible;
+    if (scrollPosition > maxScroll) scrollPosition = maxScroll;
+    grid.style.transform = `translateX(-${scrollPosition}px)`;
 });
-
-
-
-
-
-
-
-  
