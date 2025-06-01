@@ -30,6 +30,7 @@ body {
   font-family: var(--font-family); 
   background-color: var(--color-fondo);
   color: var(--color-texto-fuerte);
+  padding-top: 50px;
 }
 
 h1, h2, h3, .btn {
@@ -48,6 +49,11 @@ ul {
 
 /*///////////////// NAV //////////////////*/
 .main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; 
   background-color: var(--color-principal-oscuro);
   color: var(--color-principal-claro);
   padding: 15px 0;
