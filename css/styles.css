@@ -121,6 +121,10 @@ footer {
   text-align: center;
 }
 
+.footer-section ul li {
+  margin-bottom: 20px; 
+}
+
 .footer-content {
   display: flex;
   flex-wrap: wrap;
@@ -174,20 +178,22 @@ footer {
 }
 
 .simple-form button {
-  background:transparent;
+  background: var(--color-acento);
   color: white;
-  border: 2px solid white;
-  padding: 10px;
-  font-size: 1em;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1.1em;
   cursor: pointer;
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s;
   font-family: "Bebas Neue";
 }
 
 .simple-form button:hover {
-  background: white;
-  color: green;
+  background: color-mix(in srgb, var(--color-acento) 90%, black 10%);
+  transform: scale(1.03);
 }
+
 
 .footer-social{
   display: flex;
@@ -203,7 +209,7 @@ footer {
 }
 
 .social-btn {
-  background: green;
+  background: rgb(80, 80, 80);
   color: white;
   border-radius: 50%;
   width: 40px;
