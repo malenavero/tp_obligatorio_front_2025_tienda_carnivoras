@@ -4,10 +4,10 @@
   --color-texto-medio: #777777;
   --color-texto-claro: #bbb;
 
-  --color-secundario: #8f8f8f; 
+  --color-secundario: #8f8f8f;
   --color-principal-oscuro: #0a2a00;
   --color-principal-claro: #fff;
-  --color-acento: #0b5d00; 
+  --color-acento: #0b5d00;
   --color-acento-hover: #123a00;
   --color-borde: #ccc;
   --color-linea: #ddd;
@@ -30,14 +30,14 @@
 }
 
 body {
-  font-family: var(--font-family); 
+  font-family: var(--font-family);
   background-color: var(--color-fondo);
   color: var(--color-texto);
   padding-top: 50px;
 }
 
 h1, h2, h3, .btn {
-  font-family: var(--font-family); 
+  font-family: var(--font-family);
 }
 
 a {
@@ -48,7 +48,6 @@ a {
 ul {
   list-style: none;
 }
-
 
 /*///////////////// NAV //////////////////*/
 .main-header {
@@ -111,7 +110,6 @@ ul {
   display: block;
 }
 
-
 /*///////////////// FOOTER //////////////////*/
 
 footer {
@@ -122,7 +120,7 @@ footer {
 }
 
 .footer-section ul li {
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
 
 .footer-content {
@@ -243,20 +241,17 @@ footer {
   font-size: 1.5em;
 }
 
-
-
-
 /*///////////////// INDEX //////////////////*/
 
 /*SLIDER DE FOTOS*/
 .hero {
   position: relative;
   width: 100%;
-  height: 70vh; 
+  height: 70vh;
   overflow: hidden;
   display: flex;
-  align-items: center; 
-  justify-content: center; 
+  align-items: center;
+  justify-content: center;
   margin-top: 7%;
   margin-bottom: 7%;
 }
@@ -275,13 +270,13 @@ footer {
 
 .slide.active {
   opacity: 1;
-  position: relative; 
+  position: relative;
   z-index: 1;
 }
 
 .slide-text {
-  position: absolute; 
-  top: 50%; 
+  position: absolute;
+  top: 50%;
   left: 10%;
   transform: translateY(-50%);
   z-index: 10;
@@ -311,8 +306,8 @@ footer {
 }
 
 .slide-text h1 {
-  font-family: var(--font-family-secu); 
-  font-size: 3.5rem; 
+  font-family: var(--font-family-secu);
+  font-size: 3.5rem;
   margin-bottom: 15px;
 }
 
@@ -332,7 +327,7 @@ footer {
   text-decoration: none;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease; 
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .slide-btn:hover {
@@ -413,7 +408,7 @@ footer {
   display:flex;
   flex-direction: column;
   align-items: center;
-  font-family: var(--font-family); 
+  font-family: var(--font-family);
     text-transform: uppercase;
 
 }
@@ -442,7 +437,7 @@ footer {
   font-weight: 100;
   font-size: 1.2em;
   color: var(--color-acento-hover);
-  margin-bottom: 0; 
+  margin-bottom: 0;
   margin-top: 0.1em;
   opacity: 0.6;
   letter-spacing: 0.5px;
@@ -489,7 +484,7 @@ footer {
   background: none;
   border: none;
   color: gray;
-  font-size: 2.5em; 
+  font-size: 2.5em;
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -509,11 +504,11 @@ footer {
 }
 
 .prev-btn {
-  left: 0; 
+  left: 0;
 }
 
 .next-btn {
-  right: 0; 
+  right: 0;
 }
 .product-dots {
   text-align: center;
@@ -587,7 +582,7 @@ footer {
   color: white;
   z-index: 10;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
-  pointer-events: none; 
+  pointer-events: none;
 }
 
 .text-overlay p {
@@ -603,7 +598,7 @@ footer {
 .article {
   display: flex;
   flex-direction: row;
-  align-items: flex-start; 
+  align-items: flex-start;
   gap: 0.2em;
   max-width: 1200px;
   margin: 0 auto;
@@ -612,7 +607,7 @@ footer {
 .words {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; 
+  justify-content: flex-start;
   color: var(--color-texto-medio);
 }
 
@@ -656,7 +651,7 @@ footer {
 .image-end {
   position: relative;
   width: 100%;
-  height: 32em; 
+  height: 32em;
   overflow: hidden;
   margin-top: 2em;
 }
@@ -681,12 +676,12 @@ footer {
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-family:var(--font-family-secu); 
+  font-family:var(--font-family-secu);
   padding: 20px;
 }
 
 .text-overlay-2 h1{
-  font-family:var(--font-family-secu); 
+  font-family:var(--font-family-secu);
 }
 
 
@@ -718,7 +713,6 @@ footer {
   background-color: #fff;
   color: #000;
 }
-
 
 /*///////////////// CONTACTO //////////////////*/
 
@@ -867,12 +861,11 @@ form textarea {
   color: var(--color-acento-hover);
 }
 
-
 /*///////////////// MENU-TIENDA //////////////////*/
 .kits {
   position: relative;
   width: 100%;
-  height: 90vh; 
+  height: 90vh;
   overflow: hidden;
 }
 
@@ -883,7 +876,7 @@ form textarea {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.6); 
+  filter: brightness(0.6);
   z-index: 1;
 }
 
@@ -897,7 +890,7 @@ form textarea {
   align-items: flex-start;
   justify-content: center;
   text-align: left;
-  padding-left: 5vw; 
+  padding-left: 5vw;
   padding-right: 5vw;
 }
 
@@ -942,7 +935,7 @@ form textarea {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin-bottom: 40px; 
+  margin-bottom: 40px;
   overflow: hidden;
 }
 
@@ -1032,9 +1025,9 @@ form textarea {
 
 .contenedor-opciones {
   max-width: 1100px;
-  margin: 0 auto;         
-  text-align: center;   
-  background-color: #dddddd;  
+  margin: 0 auto;
+  text-align: center;
+  background-color: #dddddd;
   padding: 2em 1em 0em 1em;
 }
 
@@ -1050,14 +1043,14 @@ form textarea {
   max-width: 100%;
   cursor: pointer;
   display: block;
-  margin: 0 auto;   
+  margin: 0 auto;
 }
 
 /* Tienda cercana */
 .store-section {
   position: relative;
   width: 100%;
-  height: 350px; 
+  height: 350px;
   margin: auto;
   background-image: url('../img/kits/cerca_tuyo.png');
   background-size: cover;
@@ -1069,7 +1062,7 @@ form textarea {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); 
+  transform: translate(-50%, -50%);
   text-align: center;
   padding: 20px;
   border-radius: 10px;
@@ -1079,7 +1072,7 @@ form textarea {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 10px;
-  color: var(--color-acento);  
+  color: var(--color-acento);
   text-transform: uppercase;
 }
 
@@ -1101,7 +1094,7 @@ form textarea {
 .store-text > .store-button:visited {
   display: inline-block;
   padding: 10px 20px;
-  background-color: transparent; 
+  background-color: transparent;
   color: var(--color-acento);
   border: 2px solid var(--color-acento);
   font-weight: bold;
@@ -1112,7 +1105,7 @@ form textarea {
 .store-text > .store-button:hover,
 .store-text > .store-button:focus {
   border: 4px solid var(--color-acento-hover);
-  outline: none; 
+  outline: none;
 }
 
 .store-text > .store-button:active {
@@ -1120,22 +1113,21 @@ form textarea {
   color: white;
 }
 
-
 /*///////////////// TIENDA //////////////////*/
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   row-gap: 50px;
-  column-gap: 10px;  
+  column-gap: 10px;
   padding: 50px;
-  max-width: 1200px; 
-  margin: 0 auto; 
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 
 .card {
   width: 100%;
-  max-width: none; 
+  max-width: none;
   text-align: center;
   transition: transform 0.3s ease;
   cursor: pointer;
@@ -1144,7 +1136,7 @@ form textarea {
 .img-container {
   position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1; 
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   border: none;
 }
@@ -1191,12 +1183,9 @@ form textarea {
 img {
   max-width: 100%;
   height: auto;
-  /*vertical-align: middle;*/
   border: 0;
   display: block;
 }
-
-
 
 /*///////////////// TRABAJA EN TDC + FRANQUICIAS //////////////////*/
 /* Contenedor principal */
@@ -1368,7 +1357,7 @@ img {
 }
 
 .intro-tutoriales p {
-  font-family: var(--font-family); 
+  font-family: var(--font-family);
   font-weight: 200;
   font-size: 1.2em;
   line-height: 1.8;
@@ -1396,7 +1385,7 @@ img {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
-  max-width: 1200px; 
+  max-width: 1200px;
   margin: 60px auto 0 auto;
 }
 
@@ -1468,15 +1457,14 @@ img {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 700;
-  font-family: var(--font-family); 
+  font-family: var(--font-family);
 }
 
 .card-tuto p {
   font-size: 0.95em;
   line-height: 1.4;
-  font-family: var(--font-family); 
+  font-family: var(--font-family);
 }
-
 
 /*///////////////// RESPONSIVE //////////////////*/
 
@@ -1539,20 +1527,20 @@ img {
     padding: 30px 20px;
     max-width: 100%;
   }
-  
+
   .formulario-trabaja h2 {
     font-size: 24px;
   }
-  
+
   .formulario-trabaja h3 {
     font-size: 20px;
   }
   .form-row {
-    flex-direction: column; 
+    flex-direction: column;
   }
-  
+
   .form-group {
-    width: 100%; 
+    width: 100%;
   }
 
   .kits-text > h1 {
@@ -1574,7 +1562,7 @@ img {
   .alto-b {
     height: 170px;
   }
-  
+
   .galeria {
     flex-direction: column;
     padding: 32px 16px 1px 16px;
@@ -1625,7 +1613,7 @@ img {
   .alto-b {
     height: 140px;
   }
-  
+
   .store-text > h1 {
     font-size: 2rem;
   }
@@ -1637,8 +1625,9 @@ img {
   .store-text > p {
     font-size: 0.9rem;
   }
+}
 
-  /* Mobil 2 */
+/* Mobil 2 */
 @media (max-width: 375px) {
   .kits-text > h1 {
     font-size: 1.1rem;
@@ -1678,4 +1667,77 @@ img {
     font-size: 0.9rem;
   }
 }
+
+/* Tablet vertical */
+@media (max-width: 768px) {
+  .main-nav {
+    display: none; /* Hide navigation by default on smaller screens */
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 50px; /* Adjust based on header height */
+    left: 0;
+    background-color: var(--color-principal-oscuro);
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .main-nav.show {
+    display: flex; /* Show navigation when 'show' class is active */
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .main-nav ul li {
+    margin: 10px 0;
+  }
+
+  .main-nav a {
+    padding: 10px 0;
+    display: block;
+    width: 100%;
+  }
+
+  .logo {
+    margin-left: 1em; 
+  }
+
+  /* mENU HAMBURGUESA */
+  .menu-toggle {
+    display: block; 
+    background: none;
+    border: none;
+    color: var(--color-principal-claro);
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}
+
+/* Mobile 1 */
+@media (max-width: 480px) {
+  .main-header .container {
+    padding: 0 15px;
+  }
+
+  .logo {
+    margin-left: 0.5em;
+  }
+}
+
+/* Mobile 2 */
+@media (max-width: 375px) {
+  .logo {
+    margin-left: 0.2em;
+  }
+
+  .logo-bold {
+    font-size: 1rem;
+  }
+
+  .logo-light {
+    font-size: 0.7rem;
+  }
 }
