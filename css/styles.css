@@ -55,7 +55,7 @@ ul {
   position: fixed;
   top: 0;
   left: 0;
-    z-index: 9999;
+  z-index: 9999;
   width: 100%;
   background-color: var(--color-principal-oscuro);
   color: var(--color-principal-claro);
@@ -219,6 +219,22 @@ footer {
 .social-btn:hover {
   background: white;
   color: green;
+}
+.logo-footer {
+  flex: 1 1 200px;
+  margin-bottom: 20px;
+}
+
+.logo-footer .logo {
+  margin-left: 0;
+}
+
+.logo-footer .logo .logo-bold{
+  font-size: 1.5em;
+}
+
+.logo-footer .logo .logo-light{
+  font-size: 1.5em;
 }
 
 
