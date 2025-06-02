@@ -53,25 +53,16 @@ Visita la versión deployada en GitHub Pages: [https://malenavero.github.io/tp_o
 - **JavaScript** (para la inserción del nav y el footer)  
 - **Font Awesome** (iconos)  
 
----
-
-## 📐 Responsive  
-Se agregaron media queries para distintos tamaños de pantalla:  
-- **Tablet horizontal** (max-width: 1080px)  
-- **Tablet vertical** (max-width: 768px)  
-- **Móvil 1** (max-width: 480px)  
-- **Móvil 2** (max-width: 375px)  
 
 ---
 
 ## 📸 Capturas de pantalla  
-**Vista Web**  
-
-<img src="img/screenshotWeb.png" alt="Descripción" width="400"/>
-
-**Vista Mobile**  
-
-<img src="img/screenshotMob.png" alt="Descripción" width="200"/>
+<img src="img/capturas/captura1.png" alt="Descripción" width="400"/>
+<img src="img/capturas/captura2.png" alt="Descripción" width="400"/>
+<img src="img/capturas/captura3.png" alt="Descripción" width="400"/>
+<img src="img/capturas/captura4.png" alt="Descripción" width="400"/>
+<img src="img/capturas/captura5.png" alt="Descripción" width="400"/>
+<img src="img/capturas/captura6.png" alt="Descripción" width="400"/>
 
 
 
